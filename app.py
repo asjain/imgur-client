@@ -63,5 +63,4 @@ if __name__ == "__main__":
     app = App(CLIENT_ID, CLIENT_SECRET)
     app.connect()
     acc = app.client.get_account_settings('gadiasaurabh')
-    print 'email:', acc.email
-
+    print acc.email, ' is Authenticated.'
