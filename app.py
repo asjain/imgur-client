@@ -6,6 +6,7 @@ import time
 
 CLIENT_ID = 'Enter Your Client ID'
 CLIENT_SECRET = 'ENTER Your Client Secret'
+USER_NAME = 'Enter your username'
 
 class App:
     def __init__(self, client_id, secret):
@@ -33,7 +34,7 @@ class App:
         print 'client authorized'
 
     
-# # https://api.imgur.com/sgadia_callback?code=60137aa376632be290ae645904971b52a763b222
+# https://api.imgur.com/sgadia_callback?code=60137aa376632be290ae645904971b52a763b222
 class Redirect(threading.Thread):
     def __init__(self):
         self.access_code = None
@@ -62,5 +63,5 @@ class Redirect(threading.Thread):
 if __name__ == "__main__":
     app = App(CLIENT_ID, CLIENT_SECRET)
     app.connect()
-    acc = app.client.get_account_settings('gadiasaurabh')
+    acc = app.client.get_account_settings(USER_NAME)
     print acc.email, ' is Authenticated.'
